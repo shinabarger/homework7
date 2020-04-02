@@ -1,5 +1,5 @@
 // Variables!
-var color = "clr"
+var color;
 var radius = 15;
 var x = 50;
 var y = 150;
@@ -37,26 +37,21 @@ canvas.addEventListener('mouseup', function(e) {
 //Add a listener for the mouse movement
 canvas.addEventListener('mousemove', function(e) {
     if (AllowDrawing == true) {
-        x = e.x - 40;
-        y = e.y - 40;
+        x = e.x - 50;
+        y = e.y - 50;
         draw();
     }
 })
 
-
-
 document.getElementById("erase").addEventListener("click", function(e) {
-  toggle();
+    ctx.clearRect(0, 0, ctx.width, ctx.height);
+    canvasWidth = (window.innerWidth) * .75;
+    canvasHeight = (window.innerHeight) * .75;
+    document.querySelector('canvas').width = canvasWidth;
+    document.querySelector('canvas').height = canvasHeight;
+    ctx.beginPath();
+    console.log("Erase");
 })
-
-function toggle() {
-  toggle = !toggle;
-
-  console.log('Toggled bool is',
-                      toggle);
-  return toggle;
-}
-
 
 
 // Functions!
@@ -71,6 +66,6 @@ function draw() {
 }
 
 function getColor() {
-  color = clr.value;
-  return color;
+    color = clr.value;
+    return color;
 }

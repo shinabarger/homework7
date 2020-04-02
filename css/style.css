@@ -1,3 +1,8 @@
+body {
+  font-family:sans-serif;
+  font-style: normal;
+}
+
 main, canvas, label, h1, body, button {
   padding: .5em;
   margin: .5em;
