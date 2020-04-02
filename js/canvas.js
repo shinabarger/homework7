@@ -3,6 +3,7 @@ var color = "clr"
 var radius = 15;
 var x = 50;
 var y = 150;
+var toggle;
 
 //set up canvas size to be 75% of the width and height of the screen
 var canvasWidth = (window.innerWidth) * .75;
@@ -42,19 +43,34 @@ canvas.addEventListener('mousemove', function(e) {
     }
 })
 
-//Add a listener for the color picker
-clr.addEventListener("input", function(e) {
-    console.log("Color Picker");
-    console.log(this);
-    ctx.fillStyle = clr.value;
+
+
+document.getElementById("erase").addEventListener("click", function(e) {
+  toggle();
 })
+
+function toggle() {
+  toggle = !toggle;
+
+  console.log('Toggled bool is',
+                      toggle);
+  return toggle;
+}
+
 
 
 // Functions!
 // I would add a function for draw
 function draw() {
     console.log("I am going to draw!");
+    console.log("Color value is" + clr.value)
+    ctx.fillStyle = getColor();
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, 2 * Math.PI);
     ctx.fill();
+}
+
+function getColor() {
+  color = clr.value;
+  return color;
 }
