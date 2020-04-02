@@ -1,4 +1,4 @@
-#canvas {
-  width: 75vh;
-  height: 75vh;
+main, canvas, label, h1 {
+  padding: .6em;
+  margin: .6em;
 }
