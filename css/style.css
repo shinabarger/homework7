@@ -12,7 +12,7 @@ div {
   padding-top: .5em;
 }
 
-button {
+button, label {
   box-shadow: 0px 10px 14px -7px #276873;
 	background-color:#599bb3;
 	border-radius:8px;
