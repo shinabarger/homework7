@@ -1,5 +1,5 @@
 // Variables!
-var color ="clr"
+var color = "clr"
 var radius = 15;
 var x = 50;
 var y = 150;
@@ -19,42 +19,42 @@ var AllowDrawing = false;
 //Listeners!!
 //Add a listener for loading the window
 window.addEventListener('load', function(e) {
-	console.log("window loaded");
-	ctx.fillStyle = color;
+    console.log("window loaded");
+    ctx.fillStyle = color;
 })
 
 //detect mouse down
 canvas.addEventListener('mousedown', function(e) {
-  AllowDrawing = true;
+    AllowDrawing = true;
 })
 
 //detect mouse up
 canvas.addEventListener('mouseup', function(e) {
-  AllowDrawing = false;
+    AllowDrawing = false;
 })
 
 //Add a listener for the mouse movement
 canvas.addEventListener('mousemove', function(e) {
-	if (AllowDrawing == true){
-	x = e.x - 40;
-	y = e.y - 40;
-  draw();
-}
+    if (AllowDrawing == true) {
+        x = e.x - 40;
+        y = e.y - 40;
+        draw();
+    }
 })
 
 //Add a listener for the color picker
-clr.addEventListener("input", function(e){
-	console.log("Color Picker");
-	console.log(this);
-	ctx.fillStyle = clr.value;
+clr.addEventListener("input", function(e) {
+    console.log("Color Picker");
+    console.log(this);
+    ctx.fillStyle = clr.value;
 })
 
 
 // Functions!
 // I would add a function for draw
-function draw(){
-	console.log("I am going to draw!");
-	ctx.beginPath();
-	ctx.arc(x,y,radius,0,2*Math.PI);
-	ctx.fill();
+function draw() {
+    console.log("I am going to draw!");
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.fill();
 }
